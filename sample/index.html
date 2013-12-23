@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C.G.D.W. sample</title>
+<style type="text/css">
+#showbox { width:440px; height:560px; margin:0 auto; overflow:hidden;}
+#bigimg { width:440px; height:440px;}
+#bigimg img { width:440px; height:440px;}
+#thumbimg { width:440px; height:120px;}
+#thumbimg ul { padding:0; margin:0; list-style:none; display:block;}
+#thumbimg ul li { padding:0; margin:10px 5px; float:left; cursor:pointer;}
+#thumbimg ul li img { border:0; width:100px; height:100px;}
+</style>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#bigimg img').attr('src', $('#thumbimg img:first').attr('src'));
+	$('#thumbimg img').mouseover(function() {
+		var img = $(this);
+		$('#bigimg img').fadeOut(200, function() {
+			$(this).attr('src', img.attr('src'));
+		})
+		.fadeIn(200);
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="showbox">
+	<div id="bigimg">
+    	<img>
+    </div>
+    <div id="thumbimg">
+    	<ul>
+        	<li><img src="images/img01.jpg"></li>
+            <li><img src="images/img02.jpg"></li>
+            <li><img src="images/img03.jpg"></li>
+            <li><img src="images/img04.jpg"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
